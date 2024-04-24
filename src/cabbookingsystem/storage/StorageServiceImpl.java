@@ -75,7 +75,7 @@ public class StorageServiceImpl implements StorageService {
     public Boolean book(Booking booking) {
         this.bookingStorage.put(booking.getBookingId(), booking);
         Rider rider = this.riderStorage.get(booking.getRiderUserId());
-        System.out.println(booking.getRiderUserId());
+        //System.out.println(booking.getRiderUserId());
         List<String> bookingHistory = rider.getBookingHistory();
         if(bookingHistory == null){
             bookingHistory = new ArrayList<>();
@@ -104,7 +104,7 @@ public class StorageServiceImpl implements StorageService {
     @Override
     public List<Booking> rideHistory(String riderUserId) {
         Rider rider = this.riderStorage.get(riderUserId);
-        System.out.println(riderUserId);
+        //System.out.println(riderUserId);
         List<String> riderBookingIdsHistory = rider.getBookingHistory();
         List<Booking> bookingHistory = new ArrayList<>();
         for(String bookingId : riderBookingIdsHistory){
